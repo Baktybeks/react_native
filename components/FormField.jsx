@@ -17,12 +17,11 @@ const FormField = ({
     <View className={`gap-2 ${otherStyles}`}>
       <Text className="text-base text-gray-100 font-pmedium">{title}</Text>
       <View
-        className={`w-full h-16 px-4 border-2 rounded-2xl items-center bg-black-100 flex-row ${
-          isFocused ? "border-secondary" : "border-black-200"
-        }`}
+        className={`w-full h-16 px-4 border-2 rounded-2xl items-center bg-black-100 flex-row 
+                    ${isFocused ? "border-secondary" : "border-black-200"}`}
       >
         <TextInput
-          className="flex-1 text-white font-psemibold text-base"
+          className="flex-1 text-white font-psemibold text-base h-auto"
           value={value}
           placeholder={placeholder}
           placeholderTextColor="#7b7b8b"
@@ -30,6 +29,7 @@ const FormField = ({
           secureTextEntry={title === "Password" && !showPassword}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
+          style={{ textAlignVertical: "center" }}
         />
         {title === "Password" && (
           <TouchableOpacity onPress={() => setShowPassword((prev) => !prev)}>
